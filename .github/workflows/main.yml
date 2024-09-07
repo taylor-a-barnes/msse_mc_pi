@@ -22,6 +22,7 @@ jobs:
         run: |
           mkdir build
           cd build
+          cmake ..
           cmake --build .
 
       - name: Run the code
