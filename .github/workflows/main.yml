@@ -25,7 +25,18 @@ jobs:
           cmake ..
           cmake --build .
 
-      - name: Run the code
+      - name: Run the code on a single rank
         run: |
-          pwd
+          cd build
+          mpiexec -n 1 ./mcpi
+
+      - name: Run the code on three ranks
+        run: |
+          cd build
+          mpiexec -n 3 ./mcpi
+
+      - name: Run the code on four ranks
+        run: |
+          cd build
+          mpiexec -n 4 ./mcpi
 
